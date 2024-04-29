@@ -23,9 +23,13 @@ enabling more applications to access the agent-based modeling framework for diff
 The morphological changes of *Aspergillus fumigatus* conidia, the swelling dynamics, is based on ODE models which are also provided in this repository.
 Moreover, we also added the analytical Surrogate Infection Model (SIM), based on a neural network implemented in python pytorch that predicts hABM outcomes in a fraction of time and allows extended analyses of infection dynamics.
 
- ![](VideoS1.mp4 "To-scale representation of one human alveolus")
+<p align="center">
+  <img src="VideoS1.mp4" alt="Video">
+</p>
 
- ![](VideoS2.mp4 "Cellular contribution to uptake of A. fumigatus")
+<p align="center">
+  <img src="VideoS1.mp4" alt="Video">
+</p>
 
 To-scale representation of the human alveolus as a 3/4
 sphere in the hABM (showcase in first video). It is composed of an epithelial cell layer consisting of alveolar epithelial
