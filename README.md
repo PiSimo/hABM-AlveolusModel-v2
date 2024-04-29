@@ -24,7 +24,7 @@ The morphological changes of *Aspergillus fumigatus* conidia, the swelling dynam
 Moreover, we also added the analytical Surrogate Infection Model (SIM), based on a neural network implemented in python pytorch that predicts hABM outcomes in a fraction of time and allows extended analyses of infection dynamics.
 
 
- ![](hABM_image.mp4 "To-scale representation of one human alveolus")
+ ![](hABM_image.png "To-scale representation of one human alveolus")
 
 To-scale representation of the human alveolus as a 3/4 sphere in the hABM. It is composed of an epithelial cell layer consisting of alveolar epithelial
 cells (AEC) type I (yellow) and type II (blue). A single *A. fumigatus* conidium (red) is
