@@ -1,0 +1,62 @@
+﻿{
+	"Agent-Based-Framework": {
+		"Rates": {
+			"FungalSwelling": {
+				"type": "ConstantRate",
+				"rate": 10.0
+			},
+			"UptakenByAEC1": {
+				"type": "ConstantRate",
+				"rate": 0.005
+			},
+			"KilledByAEC1": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"GerminationInsideAEC1": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"UptakenByAEC2": {
+				"type": "ConstantRate",
+				"rate": 0.00137
+			},
+			"KilledByAEC2": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"GerminationInsideAEC2": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"GerminationOutside": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"GerminationInsideAM": {
+				"type": "ConditionalRate",
+				"rate": 0.0,
+				"condition": "ImmuneCellMacrophage"
+			},
+			"UptakenByAM": {
+				"type": "ConditionalRate",
+				"rate": 1.0,
+				"condition": "ImmuneCellMacrophage"
+			},
+			"KilledByAM": {
+				"type": "ConditionalRate",
+				"rate": 1.0,
+				"condition": "ImmuneCellMacrophage"
+			},
+			"nointerplay": {
+				"type": "ConstantRate",
+				"rate": -1.0
+			},
+			"nointerplay-adherence": {
+				"type": "ConditionalRate",
+				"rate": 0.01,
+				"condition": "ImmuneCellMacrophage"
+			}
+		}
+	}
+}

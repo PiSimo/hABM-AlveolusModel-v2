@@ -1,0 +1,14 @@
+{
+  "Agent-Based-Framework": {
+    "runs": 1,
+    "number_of_threads": 1,
+    "seed": 1,
+    "simulator": "SimulatorAlveolus",
+    "available_simulators": {
+      "SimulatorAlveolus": {
+        "config_path": "../../configurations/testConfigs/testSimulatorAlveolus",
+        "output_dir": "../../configurations/testConfigs/testSimulatorAlveolus"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+cmake-*
+.idea/
+configurations/basicConfigs/basicConfig/results*
+configurations/basicConfigs/basicConfigExample/results*

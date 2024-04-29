@@ -1,0 +1,6 @@
+{
+  "Agent-Based-Framework": {
+    "active_measurements": ["agent-statistics%300"],
+    "cell_state_count": []
+  }
+}

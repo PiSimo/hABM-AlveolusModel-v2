@@ -1,0 +1,247 @@
+﻿{
+  "Agent-Based-Framework": {
+    "topic": "results",
+    "timestepping": 0.1,
+    "max_time": 360,
+    "dimensions": 2,
+    "use_interactions": true,
+    "stopping_criteria": ["FirstPassageTime"],
+    "Sites": [
+      {
+        "identifier": "as1",
+        "NeighbourhoodLocator": {
+          "type": "BalloonListNHLocator",
+          "interaction_check_interval": 1
+        },
+        "type": "AlveoleSite",
+        "AlveoleSite": {
+          "organism": 2,
+          "site_center": [0, 0, 0],
+          "site_radius": 26.2,
+          "theta_lower_bound": 1.05,
+          "surfactant_thickness": 3.0,
+          "thickness_of_border": 1.5,
+          "radius_pores_of_kohn": 2.99,
+          "number_of_pok": 7,
+          "number_of_aec2": 4,
+          "radius_alv_epith_type_one": 36.82,
+          "objects_per_row": 4,
+          "length_alv_epth_type_two": 8.12
+        },
+        "Particles": {
+          "diffusion_constant": 20,
+          "molecule_secretion_per_cell": 1500,
+          "visualize_concentration": false,
+          "particle_delauney_input_file": "src/apps/alveolus/input/particle-dist/513particles-delauney_mouse.json"
+        },
+        "AgentManager": {
+          "Types": ["ImmuneCellMacrophage", "FungalCellAlveolus"],
+          "Agents": {
+            "FungalCellAlveolus": {
+              "type": "FungalCellAlveolus",
+              "initial_distribution": 0,
+              "number": 1,
+              "hyphal_growth": {
+                "activated": false,
+                "curve_angle": {},
+                "branch_angle": {},
+                "branch_distance": {},
+                "growth": {}
+              },
+              "Morphology": {
+                "color": "redTransp",
+                "SphericalMorphology": {
+                  "radius": 1.39,
+                  "stddev": 0
+                }
+              },
+              "Cell States": {
+                "InitialCellState": {},
+                "FungalOnAEC1": {
+                  "next_states": {
+                    "OnAEC1Swelling": {
+                      "rate": "FungalSwelling"
+                    }
+                  }
+                },
+                "OnAEC1Swelling": {
+                  "next_states": {
+                    "UptakenByAEC1": {
+                      "rate": "UptakenByAEC1"
+                    },
+                    "GerminationOutside": {
+                      "rate": "GerminationOutside"
+                    }
+                  }
+                },
+                "FungalOnAEC2": {
+                  "next_states": {
+                    "OnAEC2Swelling": {
+                      "rate": "FungalSwelling"
+                    }
+                  }
+                },
+                "OnAEC2Swelling": {
+                  "next_states": {
+                    "UptakenByAEC2": {
+                      "rate": "UptakenByAEC2"
+                    },
+                    "GerminationOutside": {
+                      "rate": "GerminationOutside"
+                    }
+                  }
+                },
+                "UptakenByAEC1": {
+                  "next_states": {
+                    "KilledByAEC1": {
+                      "rate": "KilledByAEC1"
+                    },
+                    "GerminationInsideAEC1": {
+                      "rate": "GerminationInsideAEC1"
+                    }
+                  }
+                },
+                "UptakenByAEC2": {
+                  "next_states": {
+                    "KilledByAEC2": {
+                      "rate": "KilledByAEC2"
+                    },
+                    "GerminationInsideAEC2": {
+                      "rate": "GerminationInsideAEC2"
+                    }
+                  }
+                },
+                "KilledByAEC1": {},
+                "KilledByAEC2": {},
+                "GerminationOutside": {},
+                "GerminationInsideAEC1": {},
+                "GerminationInsideAEC2": {},
+                "UptakenByAM": {},
+                "GerminationInsideAM": {},
+                "KilledByAM": {}
+              }
+            },
+            "ImmuneCellMacrophage": {
+              "type": "ImmuneCellMacrophage",
+              "initial_distribution": 1,
+              "binomial": false,
+              "number": 2,
+              "input_distribution_path": "src/apps/alveolus/input/AMdistributions/Mouse/",
+              "k_r": 0.05,
+              "k_i": 0.01,
+              "k_blr": 0.01,
+              "Movement": {
+                "type": "BiasedPersistentRandomWalk",
+                "speed": {
+                  "mean": 4,
+                  "stddev": 0
+                },
+                "persistence_time": 1
+              },
+              "Morphology": {
+                "color": "greenTransp",
+                "SphericalMorphology": {
+                  "radius": 9.5,
+                  "stddev": 0
+                }
+              },
+              "Cell States": {
+                "InitialCellState": {},
+                "Death": {}
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Interactions": {
+      "IdenticalCellsInteraction": {
+        "type": "IdenticalCellsInteraction",
+        "Interaction States": {
+          "InitialInteractionState": {
+            "next_states": {
+              "NoInterplay": {
+                "rate": "nointerplay"
+              }
+            }
+          },
+          "NoInterplay": {
+            "type": "Contacting"
+          }
+        }
+      },
+      "PhagocyteFungusInteraction": {
+        "type": "PhagocyteFungusInteraction",
+        "Conditions": {
+          "ImmuneCellMacrophage": [],
+          "FungalCellAlveolus": ["OnAEC1Swelling","OnAEC2Swelling"]
+        },
+        "Interaction States": {
+          "InitialInteractionState": {
+            "type": "InteractionType",
+            "next_states": {
+              "UptakenByAM": {
+                "rate": "UptakenByAM"
+              },
+              "NoInterplay": {
+                "rate": "nointerplay"
+              }
+            }
+          },
+          "UptakenByAM": {
+            "type": "Ingestion",
+            "next_states": {
+              "KilledByAM": {
+                "rate": "KilledByAM"
+              },
+              "GerminationInsideAM": {
+                "rate": "GerminationInsideAM"
+              }
+            }
+          },
+          "Adherence": {
+            "type": "Contacting",
+            "adhere": true,
+            "next_states": {
+              "NoInterplay": {
+                "rate": "nointerplay-adherence"
+              }
+            }
+          },
+          "KilledByAM": {
+            "type": "Ingestion"
+          },
+          "GerminationInsideAM": {
+            "type": "PiercingOfImmuneCell",
+            "next_states": {
+              "NoInterplay": {
+                "rate": "nointerplay-adherence"
+              }
+            }
+          },
+          "NoInterplay": {
+            "type": "Contacting",
+            "must_overhead": 0.05
+          }
+        }
+      },
+      "AvoidanceInteraction": {
+        "type": "AvoidanceInteraction",
+        "Interaction States": {
+          "InitialInteractionState": {
+            "type": "InteractionType",
+            "next_states": {
+              "Avoidance": {
+                "rate": "nointerplay"
+              }
+            }
+          },
+          "Avoidance": {
+            "type": "Contacting",
+            "must_overhead": 0.05
+          }
+        }
+      }
+    }
+  }
+}

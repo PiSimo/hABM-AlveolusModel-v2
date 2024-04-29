@@ -1,0 +1,24 @@
+{
+  "Agent-Based-Framework": {
+    "runs": 1,
+    "number_of_threads": 1,
+    "seed": 1,
+    "simulator": "SimulatorAlveolus",
+    "available_simulators": {
+      "Simulator": {
+        "config_path": "configurations/basicConfigs/basicConfig",
+        "output_dir": "configurations/basicConfigs/basicConfig"
+      },
+      "SimulatorAlveolus": {
+        "config_path": "configurations/alveolus/basicAlveolus",
+        "output_dir": "configurations/alveolus/basicAlveolus"
+      }
+    },
+    "parameter_screening": {
+      "icNum": [12],
+      "t0sAEC": [120],
+      "rupAM": [0.274],
+      "rupAEC1": [0.00137]
+    }
+  }
+}

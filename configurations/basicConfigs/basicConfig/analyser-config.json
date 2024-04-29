@@ -1,0 +1,6 @@
+{
+  "Agent-Based-Framework": {
+    "active_measurements": ["hyphae-statistics-end", "agent-statistics%50", "environment"],
+    "cell_state_count": []
+  }
+}

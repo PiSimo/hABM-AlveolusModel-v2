@@ -1,0 +1,33 @@
+﻿{
+	"Agent-Based-Framework": {
+		"Rates": {
+			"FungalResting": {
+				"type": "ConstantRate",
+				"rate": 10.0
+			},
+			"FungalSwelling": {
+				"type": "ConstantRate",
+				"rate": 0.0
+			},
+			"nointerplay": {
+				"type": "ConstantRate",
+				"rate": -1.0
+			},
+			"phagocytose": {
+				"type": "ConditionalRate",
+				"rate": 10.0,
+				"condition": "ImmuneCell"
+			},
+			"nointerplay-adherence": {
+				"type": "ConditionalRate",
+				"rate": 0.01,
+				"condition": "ImmuneCell"
+			},
+			"lysis": {
+				"type": "ConditionalRate",
+				"rate": 0.0,
+				"condition": "ImmuneCell"
+			}
+		}
+	}
+}
