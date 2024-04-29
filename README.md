@@ -23,21 +23,15 @@ enabling more applications to access the agent-based modeling framework for diff
 The morphological changes of *Aspergillus fumigatus* conidia, the swelling dynamics, is based on ODE models which are also provided in this repository.
 Moreover, we also added the analytical Surrogate Infection Model (SIM), based on a neural network implemented in python pytorch that predicts hABM outcomes in a fraction of time and allows extended analyses of infection dynamics.
 
-<p align="center">
-  <img src="VideoS1.mp4" alt="Video">
-</p>
 
-<p align="center">
-  <img src="VideoS1.mp4" alt="Video">
-</p>
+ ![](hABM_image.mp4 "To-scale representation of one human alveolus")
 
-To-scale representation of the human alveolus as a 3/4
-sphere in the hABM (showcase in first video). It is composed of an epithelial cell layer consisting of alveolar epithelial
+To-scale representation of the human alveolus as a 3/4 sphere in the hABM. It is composed of an epithelial cell layer consisting of alveolar epithelial
 cells (AEC) type I (yellow) and type II (blue). A single *A. fumigatus* conidium (red) is
 randomly positioned on the inner alveolar surface and the contacting AEC is secreting
-chemokines (white isolines) to attract alveolar macrophages (green) towards the conidium.
-The alveolar entrance ring and the pores of Kohn (black) are the boundaries of the system. Exemplary uptake of 
-*A. fumigatus* conidia by type 2 AECs, type 1 AECs and AMs (showcase in second video).
+chemokines (white isolines) to attract alveolar macrophages (green) towards the conidium (see VideoS1.mp4).
+The alveolar entrance ring and the pores of Kohn are the boundaries of the system. 
+*A. fumigatus* conidia can be taken up by type 2 AECs, type 1 AECs or AMs (see VideoS2.mp4).
 
 ## Requirements
 - C++17 (or higher)
