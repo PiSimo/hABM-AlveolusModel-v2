@@ -19,6 +19,6 @@ add_library(simulatorAlveolus SHARED
         interactiontypes/PiercingOfImmuneCell.cpp
         cellparts/HyphalBranch.cpp
         environment/Surface.cpp
-        )
+)
 
 target_include_directories(simulatorAlveolus PRIVATE ../..)

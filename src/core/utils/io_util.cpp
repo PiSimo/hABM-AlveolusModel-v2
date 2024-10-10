@@ -12,8 +12,10 @@
 #include <random>
 
 #include "core/utils/io_util.h"
-#include "external/json.hpp"
 #include "core/utils/macros.h"
+#include "external/json.hpp"
+
+#include <fstream>
 
 namespace abm::util {
 

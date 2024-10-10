@@ -15,11 +15,13 @@
 #include <boost/algorithm/string.hpp>
 #include <bits/basic_string.h>
 
-#include "core/utils/misc_util.h"
 #include "core/basic/SphericCoordinate3D.h"
 #include "core/simulation/Agent.h"
 #include "core/utils/macros.h"
+#include "core/utils/misc_util.h"
 #include "external/json.hpp" // Include the nlohmann/json.hpp header
+
+#include <fstream>
 
 using json = nlohmann::json;
 

@@ -23,6 +23,8 @@
 
 #include "core/basic/Coordinate3D.h"
 
+#include <memory>
+
 namespace abm::util {
 
     struct ConfigParameters {
@@ -97,6 +99,10 @@ namespace abm::util {
         };
 
         struct FungalParameters : public AgentParameters {
+        };
+
+        struct DummyCellParameters : public AgentParameters {
+
         };
 
         struct AgentManagerParameters {

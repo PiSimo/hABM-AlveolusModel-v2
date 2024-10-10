@@ -35,7 +35,7 @@
           "particle_delauney_input_file": "src/apps/alveolus/input/particle-dist/10000particles-delauney_human.json"
         },
         "AgentManager": {
-          "Types": ["ImmuneCellMacrophage", "FungalCellAlveolus"],
+          "Types": ["ImmuneCellMacrophage", "FungalCellAlveolus","DummyCell"],
           "Agents": {
             "FungalCellAlveolus": {
               "type": "FungalCellAlveolus",
@@ -148,6 +148,18 @@
               "Cell States": {
                 "InitialCellState": {},
                 "Death": {}
+              }
+            },
+            "DummyCell": {
+              "type": "DummyCell",
+              "initial_distribution": 0,
+              "number": 1,
+              "Morphology": {
+                "color": "yellowTransp",
+                "SphericalMorphology": {
+                  "radius": 30,
+                  "stddev": 0
+                }
               }
             }
           }

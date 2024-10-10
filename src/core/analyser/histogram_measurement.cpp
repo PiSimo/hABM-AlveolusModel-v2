@@ -11,6 +11,7 @@
 #include <sstream>
 
 #include "core/analyser/histogram_measurment.h"
+#include <cstdint>
 
 std::ostream &operator<<(std::ostream &out, HistogramMeasurement &measurement) {
     if (!measurement.data_.empty()) {

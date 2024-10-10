@@ -11,9 +11,11 @@
 #include <optional>
 #include <random>
 
-#include "io_utils_alveolus.h"
-#include "external/json.hpp"
 #include "core/utils/macros.h"
+#include "external/json.hpp"
+#include "io_utils_alveolus.h"
+
+#include <fstream>
 
 using json = nlohmann::json;
 

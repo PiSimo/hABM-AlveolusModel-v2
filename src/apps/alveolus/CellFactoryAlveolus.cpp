@@ -9,12 +9,12 @@
 //  See the LICENSE file provided with this code for the full license.
 
 #include "CellFactoryAlveolus.h"
-#include "core/simulation/cells/ImmuneCell.h"
-#include "core/simulation/cells/FungalCell.h"
 #include "apps/alveolus/cells/FungalCellAlveolus.h"
-#include "core/simulation/Site.h"
 #include "apps/alveolus/cells/ImmuneCellMacrophage.h"
-
+#include "core/simulation/Site.h"
+#include "core/simulation/cells/DummyCell.h"
+#include "core/simulation/cells/FungalCell.h"
+#include "core/simulation/cells/ImmuneCell.h"
 
 CellFactoryAlveolus::CellFactoryAlveolus(const std::unique_ptr<abm::util::SimulationParameters::SiteParameters>
         &site_parameters) : CellFactory(site_parameters){
@@ -38,6 +38,8 @@ std::shared_ptr<Cell> CellFactoryAlveolus::createCell(const std::string &agentty
         agent = std::make_shared<FungalCellAlveolus>(std::move(c), id, site, time_delta, current_time);
     }else if (agenttype == "ImmuneCellMacrophage") {
         agent = std::make_shared<ImmuneCellMacrophage>(std::move(c), id, site, time_delta, current_time);
+    }else if (agenttype == "DummyCell") {
+        agent = std::make_shared<DummyCell>(std::move(c), id, site, time_delta, current_time);
     }
     agent->setup(time_delta, current_time, agent_configurations_[site_tag + agenttype].get());
 

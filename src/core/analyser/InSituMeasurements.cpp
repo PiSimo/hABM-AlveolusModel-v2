@@ -11,10 +11,12 @@
 #include <cmath>
 
 #include "core/analyser/InSituMeasurements.h"
+#include "core/simulation/Interaction.h"
 #include "core/simulation/Site.h"
 #include "core/simulation/neighbourhood/Collision.h"
-#include "core/simulation/Interaction.h"
 #include "core/utils/macros.h"
+
+#include <fstream>
 
 InSituMeasurements::InSituMeasurements(std::unordered_set<std::string> active_measurements, const std::string &id)
         : active_measurements_(std::move(active_measurements)) {

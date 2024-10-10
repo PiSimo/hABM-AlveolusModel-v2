@@ -9,10 +9,12 @@
 //  See the LICENSE file provided with this code for the full license.
 
 #include "core/visualisation/PovFile.h"
-#include "core/utils/io_util.h"
 #include "core/simulation/Site.h"
-#include "core/visualisation/PovRayObject.h"
+#include "core/utils/io_util.h"
 #include "core/utils/macros.h"
+#include "core/visualisation/PovRayObject.h"
+
+#include <fstream>
 
 PovFile::PovFile(const std::string &filebody) {
     filebody_pov_ = filebody;

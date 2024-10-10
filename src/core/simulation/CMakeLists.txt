@@ -43,5 +43,7 @@ add_library(simulation SHARED
         rates/ConditionalRate.cpp
         rates/ConstantRate.cpp
         site/CuboidSite.cpp
-        )
+        cells/DummyCell.h
+        cells/DummyCell.cpp
+)
 target_include_directories(simulation PRIVATE  ${PROJECT_SOURCE_DIR}/src)

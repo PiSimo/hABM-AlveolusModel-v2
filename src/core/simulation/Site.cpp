@@ -11,13 +11,14 @@
 #include <numeric>
 #include <algorithm>
 
+#include "core/simulation/AgentManager.h"
 #include "core/simulation/Site.h"
 #include "core/simulation/boundary-condition/AbsorbingBoundaries.h"
 #include "core/simulation/boundary-condition/ReflectingBoundaries.h"
-#include "core/simulation/AgentManager.h"
 #include "core/utils/macros.h"
 #include "external/json.hpp"
-#include "core/utils/macros.h"
+
+#include <fstream>
 
 using json = nlohmann::json;
 
